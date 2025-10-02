@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pro Chat • CodeClause</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">CC</div>
+        <div>
+          <h1>CodeClause Chat</h1>
+          <small>Real-time rooms</small>
+        </div>
+      </div>
+
+      <div class="user-join">
+        <input id="nameInput" placeholder="Your name" />
+        <div class="room-controls">
+          <input id="roomInput" placeholder="Room name (e.g. general)" />
+          <button id="joinBtn">Join</button>
+        </div>
+      </div>
+
+      <div class="rooms-panel">
+        <h3>Active Users</h3>
+        <ul id="usersList" class="users-list"></ul>
+      </div>
+
+      <footer class="sidebar-footer">
+        <small>Connected to local server</small>
+      </footer>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <div id="currentRoom" class="room-title">Room: <span>General</span></div>
+          <div id="currentUser" class="user-title">User: <span>Anonymous</span></div>
+        </div>
+        <div class="header-actions">
+          <button id="leaveBtn" class="btn-outline">Leave</button>
+        </div>
+      </header>
+
+      <section class="chat-window">
+        <ul id="messages" class="messages"></ul>
+      </section>
+
+      <form id="msgForm" class="composer">
+        <input id="msgInput" placeholder="Type a message, press Enter to send…" autocomplete="off" />
+        <button type="submit" class="btn-primary">Send</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
